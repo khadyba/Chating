@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/app.module.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1725549424477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1725549439593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,9 @@\n import { Module } from '@nestjs/common';\n-\n import { UserModule } from './user/user.module';\n \n @Module({\n   imports: [UserModule],\n-  controllers: [AppController],\n+  controllers: [AppCont],\n   providers: [AppService],\n })\n export class AppModule {}\n"
+                },
+                {
+                    "date": 1725549447537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,8 @@\n import { UserModule } from './user/user.module';\n \n @Module({\n   imports: [UserModule],\n-  controllers: [AppCont],\n-  providers: [AppService],\n+  controllers: [],\n+  providers: [],\n })\n export class AppModule {}\n"
+                }
+            ],
+            "date": 1725549424477,
+            "name": "Commit-0",
+            "content": "import { Module } from '@nestjs/common';\n\nimport { UserModule } from './user/user.module';\n\n@Module({\n  imports: [UserModule],\n  controllers: [AppController],\n  providers: [AppService],\n})\nexport class AppModule {}\n"
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "sourceFile": "src/auth/auth.service.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1725555373226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1725555382078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n-import { Injectable } from '@nestjs/common';\n+import { Injectable, Post } from '@nestjs/common';\n \n @Injectable()\n export class AuthService {\n-    \n+    @Post\n }\n"
+                },
+                {
+                    "date": 1725555388204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import { Injectable, Post } from '@nestjs/common';\n \n @Injectable()\n export class AuthService {\n-    @Post\n+    @Post()\n+    async\n }\n"
+                },
+                {
+                    "date": 1725555394850,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \n @Injectable()\n export class AuthService {\n     @Post()\n-    async\n+    async login ()\n }\n"
+                },
+                {
+                    "date": 1725555412783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,8 @@\n \n @Injectable()\n export class AuthService {\n     @Post()\n-    async login ()\n+    async login () {\n+        re\n+    }\n }\n"
+                },
+                {
+                    "date": 1725555419886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,7 @@\n @Injectable()\n export class AuthService {\n     @Post()\n     async login () {\n-        return ''\n+        return '';\n     }\n }\n"
+                },
+                {
+                    "date": 1725569065631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     if (!existingUser) {\n       throw new Error(\"L'utilisateur n'existe pas.\");\n     }\n \n-    const isPasswordSame += password === existingUser.password;\n+    const isPasswordSame = password === existingUser.password;\n \n     if (!isPasswordSame) {\n       throw new Error('le mot de passe est invalide.');\n     }\n"
+                }
+            ],
+            "date": 1725555373226,
+            "name": "Commit-0",
+            "content": "import { Injectable } from '@nestjs/common';\n\n@Injectable()\nexport class AuthService {\n    \n}\n"
+        }
+    ]
+}

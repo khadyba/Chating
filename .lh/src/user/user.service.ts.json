@@ -1,0 +1,198 @@
+{
+    "sourceFile": "src/user/user.service.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 45,
+            "patches": [
+                {
+                    "date": 1725549392145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1725549397372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,4 @@\n import { Injectable } from '@nestjs/common';\n \n @Injectable()\n-\n-\n export class UserService {}\n"
+                },
+                {
+                    "date": 1725549587552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n import { Injectable } from '@nestjs/common';\n \n-@Injectable()\n+@Injectable(\n+    \n+)\n export class UserService {}\n"
+                },
+                {
+                    "date": 1725549593556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { Injectable } from '@nestjs/common';\n \n @Injectable(\n-    \n+    @\n )\n export class UserService {}\n"
+                },
+                {
+                    "date": 1725549599858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { Injectable } from '@nestjs/common';\n \n @Injectable(\n-    @\n+    @G\n )\n export class UserService {}\n"
+                },
+                {
+                    "date": 1725549607477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n-import { Injectable } from '@nestjs/common';\n+import { Get, Injectable } from '@nestjs/common';\n \n @Injectable(\n-    @G\n+    @Get()\n )\n export class UserService {}\n"
+                },
+                {
+                    "date": 1725549614527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import { Get, Injectable } from '@nestjs/common';\n \n @Injectable(\n     @Get()\n+    getUsers\n )\n export class UserService {}\n"
+                },
+                {
+                    "date": 1725549628103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,5 @@\n import { Get, Injectable } from '@nestjs/common';\n \n-@Injectable(\n-    @Get()\n-    getUsers\n+@Injectable\n )\n export class UserService {}\n"
+                },
+                {
+                    "date": 1725549640593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,4 @@\n-import { Get, Injectable } from '@nestjs/common';\n+import {  Injectable } from '@nestjs/common';\n \n-@Injectable\n-)\n+@Injectable()\n export class UserService {}\n"
+                },
+                {
+                    "date": 1725549815459,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n-import {  Injectable } from '@nestjs/common';\n+import { Injectable } from '@nestjs/common';\n \n @Injectable()\n-export class UserService {}\n+export class UserService {\n+    \n+}\n"
+                },
+                {
+                    "date": 1725549821641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { Injectable } from '@nestjs/common';\n \n @Injectable()\n export class UserService {\n-    \n+    getUsers()\n }\n"
+                },
+                {
+                    "date": 1725549829769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,10 @@\n import { Injectable } from '@nestjs/common';\n \n @Injectable()\n export class UserService {\n-    getUsers()\n+    getUsers() {\n+        return [\n+            \n+        ]\n+    }\n }\n"
+                },
+                {
+                    "date": 1725549836968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,10 @@\n @Injectable()\n export class UserService {\n     getUsers() {\n         return [\n-            \n+            {\n+                id:\n+            }\n         ]\n     }\n }\n"
+                },
+                {
+                    "date": 1725549844468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,10 @@\n export class UserService {\n     getUsers() {\n         return [\n             {\n-                id:\n+                id: 1 ,\n+                \n             }\n         ]\n     }\n }\n"
+                },
+                {
+                    "date": 1725549851509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     getUsers() {\n         return [\n             {\n                 id: 1 ,\n-                \n+                firsname\n             }\n         ]\n     }\n }\n"
+                },
+                {
+                    "date": 1725549857350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     getUsers() {\n         return [\n             {\n                 id: 1 ,\n-                firsname\n+                firsname: ''\n             }\n         ]\n     }\n }\n"
+                },
+                {
+                    "date": 1725549862812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     getUsers() {\n         return [\n             {\n                 id: 1 ,\n-                firsname: ''\n+                firsname: 'khady',\n             }\n         ]\n     }\n }\n"
+                },
+                {
+                    "date": 1725549870526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n         return [\n             {\n                 id: 1 ,\n                 firsname: 'khady',\n-            }\n+            },\n         ]\n     }\n }\n"
+                },
+                {
+                    "date": 1725549877813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n             {\n                 id: 1 ,\n                 firsname: 'khady',\n             },\n-        ]\n+        ];\n     }\n }\n"
+                },
+                {
+                    "date": 1725549886278,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n \n @Injectable()\n export class UserService {\n     getUsers() {\n+        \n         return [\n             {\n                 id: 1 ,\n                 firsname: 'khady',\n"
+                },
+                {
+                    "date": 1725552507068,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,14 @@\n import { Injectable } from '@nestjs/common';\n \n @Injectable()\n export class UserService {\n-    getUsers() {\n-        \n-        return [\n-            {\n-                id: 1 ,\n-                firsname: 'khady',\n-            },\n-        ];\n-    }\n+    \n+  getUsers() {\n+    return [\n+      {\n+        id: 1,\n+        firsname: 'khady',\n+      },\n+    ];\n+  }\n }\n"
+                },
+                {
+                    "date": 1725552514138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Injectable } from '@nestjs/common';\n \n @Injectable()\n export class UserService {\n-    \n+    constructor(private )\n   getUsers() {\n     return [\n       {\n         id: 1,\n"
+                },
+                {
+                    "date": 1725552521346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Injectable } from '@nestjs/common';\n \n @Injectable()\n export class UserService {\n-    constructor(private )\n+    constructor(private readonly prisma)\n   getUsers() {\n     return [\n       {\n         id: 1,\n"
+                },
+                {
+                    "date": 1725552526618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Injectable } from '@nestjs/common';\n \n @Injectable()\n export class UserService {\n-    constructor(private readonly prisma)\n+    constructor(private readonly prisma: Pr)\n   getUsers() {\n     return [\n       {\n         id: 1,\n"
+                },
+                {
+                    "date": 1725552532001,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import { Injectable } from '@nestjs/common';\n+import { PrismaService } from 'src/prisma.service';\n \n @Injectable()\n export class UserService {\n-    constructor(private readonly prisma: Pr)\n+    constructor(private readonly prisma: PrismaService)\n   getUsers() {\n     return [\n       {\n         id: 1,\n"
+                },
+                {
+                    "date": 1725552545984,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { PrismaService } from 'src/prisma.service';\n \n @Injectable()\n export class UserService {\n-    constructor(private readonly prisma: PrismaService)\n+constructor(private readonly prisma: PrismaService) {}\n   getUsers() {\n     return [\n       {\n         id: 1,\n"
+                },
+                {
+                    "date": 1725552663285,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,14 +2,15 @@\n import { PrismaService } from 'src/prisma.service';\n \n @Injectable()\n export class UserService {\n-constructor(private readonly prisma: PrismaService) {}\n-  getUsers() {\n-    return [\n-      {\n-        id: 1,\n-        firsname: 'khady',\n+  constructor(private readonly prisma: PrismaService) {}\n+  async getUsers() {\n+    const users = await this.prisma.user.findMany({\n+      select: {\n+        id: true,\n+        email: true,\n+        firstName: true,\n+        avatarFileKey: true,\n       },\n-    ];\n-  }\n+    });\n }\n"
+                },
+                {
+                    "date": 1725552671255,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,8 @@\n       select: {\n         id: true,\n         email: true,\n         firstName: true,\n-        avatarFileKey: true,\n+      \n       },\n     });\n }\n"
+                },
+                {
+                    "date": 1725552687057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,6 @@\n         email: true,\n         firstName: true,\n       \n       },\n-    });\n+    })\n }\n"
+                },
+                {
+                    "date": 1725552712174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,5 +12,6 @@\n         firstName: true,\n       \n       },\n     })\n+    \n }\n"
+                },
+                {
+                    "date": 1725552728623,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,6 +12,7 @@\n         firstName: true,\n       \n       },\n     })\n-    \n+\n }\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725552735346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,8 @@\n         firstName: true,\n       \n       },\n     })\n+    \n \n }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725552742462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,8 @@\n         firstName: true,\n       \n       },\n     })\n-    \n+    return\n \n }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725552747627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,8 @@\n         firstName: true,\n       \n       },\n     })\n-    return\n+    return users;\n \n }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725552801329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,12 +8,10 @@\n     const users = await this.prisma.user.findMany({\n       select: {\n         id: true,\n         email: true,\n-        firstName: true,\n-      \n+        firstname: true,\n       },\n-    })\n+    });\n     return users;\n-\n\\ No newline at end of file\n+  }\n }\n-}\n"
+                },
+                {
+                    "date": 1725553414043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,6 @@\n       },\n     });\n     return users;\n   }\n+  \n }\n"
+                },
+                {
+                    "date": 1725553419713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,18 @@\n       },\n     });\n     return users;\n   }\n-  \n+  async getUser({ userId }: { userId: string }) {\n+    const user = await this.prisma.user.findUnique({\n+      where: {\n+        id: userId,\n+      },\n+      select: {\n+        id: true,\n+        email: true,\n+        firstname: true,\n+        avatarFileKey: true,\n+        stripeAccountId: true,\n+      },\n+    });\n }\n"
+                },
+                {
+                    "date": 1725553426814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,8 @@\n       select: {\n         id: true,\n         email: true,\n         firstname: true,\n-        avatarFileKey: true,\n         stripeAccountId: true,\n       },\n     });\n }\n"
+                },
+                {
+                    "date": 1725553432389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,8 @@\n       select: {\n         id: true,\n         email: true,\n         firstname: true,\n-        stripeAccountId: true,\n+\n       },\n     });\n }\n"
+                },
+                {
+                    "date": 1725553446918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,17 +13,16 @@\n       },\n     });\n     return users;\n   }\n-  async getUser({ userId }: { userId: string }) {\n+  async getUser({ userId }: { userId: number }) {\n     const user = await this.prisma.user.findUnique({\n       where: {\n         id: userId,\n       },\n       select: {\n         id: true,\n         email: true,\n         firstname: true,\n-\n       },\n     });\n }\n"
+                },
+                {
+                    "date": 1725553455744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,4 +25,5 @@\n         firstname: true,\n       },\n     });\n }\n+\n"
+                },
+                {
+                    "date": 1725553487395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,7 @@\n         email: true,\n         firstname: true,\n       },\n     });\n+    re\n }\n-\n+}\n"
+                },
+                {
+                    "date": 1725553494376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,7 +24,7 @@\n         email: true,\n         firstname: true,\n       },\n     });\n-    re\n+    return user;\n }\n }\n"
+                },
+                {
+                    "date": 1725554858417,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,15 +16,17 @@\n   }\n   async getUser({ userId }: { userId: number }) {\n     const user = await this.prisma.user.findUnique({\n       where: {\n-        id: userId,\n+        id: userId,  // Correctement typé en Int\n       },\n       select: {\n         id: true,\n         email: true,\n         firstname: true,\n       },\n     });\n+  \n     return user;\n+  }\n+  \n }\n-}\n"
+                },
+                {
+                    "date": 1725554873347,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,8 @@\n         email: true,\n         firstname: true,\n       },\n     });\n-  \n     return user;\n   }\n   \n }\n"
+                },
+                {
+                    "date": 1725554883648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n   }\n   async getUser({ userId }: { userId: number }) {\n     const user = await this.prisma.user.findUnique({\n       where: {\n-        id: userId,  // Correctement typé en Int\n+        id: userId,\n       },\n       select: {\n         id: true,\n         email: true,\n@@ -26,6 +26,5 @@\n       },\n     });\n     return user;\n   }\n-  \n }\n"
+                }
+            ],
+            "date": 1725549392145,
+            "name": "Commit-0",
+            "content": "import { Injectable } from '@nestjs/common';\n\n@Injectable()\n\n\nexport class UserService {}\n"
+        }
+    ]
+}

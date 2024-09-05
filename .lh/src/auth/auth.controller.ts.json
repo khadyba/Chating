@@ -1,0 +1,126 @@
+{
+    "sourceFile": "src/auth/auth.controller.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 27,
+            "patches": [
+                {
+                    "date": 1725556060147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1725556072545,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Controller } from '@nestjs/common';\n+import { Controller, } from '@nestjs/common';\n \n @Controller('auth')\n export class AuthController {\n     @Post('login')\n"
+                },
+                {
+                    "date": 1725556077877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Controller, } from '@nestjs/common';\n+import { Controller, B } from '@nestjs/common';\n \n @Controller('auth')\n export class AuthController {\n     @Post('login')\n"
+                },
+                {
+                    "date": 1725556083895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Controller, B } from '@nestjs/common';\n+import { Controller, Body, Post } from '@nestjs/common';\n \n @Controller('auth')\n export class AuthController {\n     @Post('login')\n"
+                },
+                {
+                    "date": 1725556089243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Controller, Body, Post } from '@nestjs/common';\n \n @Controller('auth')\n export class AuthController {\n-    @Post('login')\n+  @Post('login')\n   async login(@Body() authBody: { email: string; password: number }) {\n     console.log(authBody);\n     return '';\n   }\n"
+                },
+                {
+                    "date": 1725556198159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import { Controller, Body, Post } from '@nestjs/common';\n \n+type\n @Controller('auth')\n export class AuthController {\n   @Post('login')\n   async login(@Body() authBody: { email: string; password: number }) {\n"
+                },
+                {
+                    "date": 1725556205327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { Controller, Body, Post } from '@nestjs/common';\n \n-type\n+type Auth\n @Controller('auth')\n export class AuthController {\n   @Post('login')\n   async login(@Body() authBody: { email: string; password: number }) {\n"
+                },
+                {
+                    "date": 1725556210568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { Controller, Body, Post } from '@nestjs/common';\n \n-type Auth\n+type AuthB\n @Controller('auth')\n export class AuthController {\n   @Post('login')\n   async login(@Body() authBody: { email: string; password: number }) {\n"
+                },
+                {
+                    "date": 1725556215857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { Controller, Body, Post } from '@nestjs/common';\n \n-type AuthB\n+type AuthBody \n @Controller('auth')\n export class AuthController {\n   @Post('login')\n   async login(@Body() authBody: { email: string; password: number }) {\n"
+                },
+                {
+                    "date": 1725556221120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { Controller, Body, Post } from '@nestjs/common';\n \n-type AuthBody \n+type AuthBody =\n @Controller('auth')\n export class AuthController {\n   @Post('login')\n   async login(@Body() authBody: { email: string; password: number }) {\n"
+                },
+                {
+                    "date": 1725556233154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n import { Controller, Body, Post } from '@nestjs/common';\n \n-type AuthBody =\n+type AuthBody = \n @Controller('auth')\n export class AuthController {\n   @Post('login')\n-  async login(@Body() authBody: { email: string; password: number }) {\n+  async login(@Body() authBody:) {\n     console.log(authBody);\n     return '';\n   }\n }\n"
+                },
+                {
+                    "date": 1725556239640,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n import { Controller, Body, Post } from '@nestjs/common';\n \n-type AuthBody = \n+type AuthBody =   { email: string; password: number };\n @Controller('auth')\n export class AuthController {\n   @Post('login')\n-  async login(@Body() authBody:) {\n+  async login(@Body() authBody: ) {\n     console.log(authBody);\n     return '';\n   }\n }\n"
+                },
+                {
+                    "date": 1725556249122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n import { Controller, Body, Post } from '@nestjs/common';\n \n-type AuthBody =   { email: string; password: number };\n+type AuthBody = { email: string; password: number };\n @Controller('auth')\n export class AuthController {\n   @Post('login')\n-  async login(@Body() authBody: ) {\n+  async login(@Body() authBody: AuthBody) {\n     console.log(authBody);\n     return '';\n   }\n }\n"
+                },
+                {
+                    "date": 1725556291007,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n \n type AuthBody = { email: string; password: number };\n @Controller('auth')\n export class AuthController {\n+    \n   @Post('login')\n   async login(@Body() authBody: AuthBody) {\n     console.log(authBody);\n     return '';\n"
+                },
+                {
+                    "date": 1725556313085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,11 @@\n \n type AuthBody = { email: string; password: number };\n @Controller('auth')\n export class AuthController {\n-    \n+    constructor(\n+        private readonly authService: AuthService,\n+    ) {}\n   @Post('login')\n   async login(@Body() authBody: AuthBody) {\n     console.log(authBody);\n     return '';\n"
+                },
+                {
+                    "date": 1725556319239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,9 @@\n type AuthBody = { email: string; password: number };\n @Controller('auth')\n export class AuthController {\n     constructor(\n-        private readonly authService: AuthService,\n-    ) {}\n+        private readonly authService: AuthService) {}\n   @Post('login')\n   async login(@Body() authBody: AuthBody) {\n     console.log(authBody);\n     return '';\n"
+                },
+                {
+                    "date": 1725556327409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,9 @@\n \n type AuthBody = { email: string; password: number };\n @Controller('auth')\n export class AuthController {\n-    constructor(\n-        private readonly authService: AuthService) {}\n+    constructor(private readonly authService: AuthService) {}\n   @Post('login')\n   async login(@Body() authBody: AuthBody) {\n     console.log(authBody);\n     return '';\n"
+                },
+                {
+                    "date": 1725556333179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n type AuthBody = { email: string; password: number };\n @Controller('auth')\n export class AuthController {\n-    constructor(private readonly authService: AuthService) {}\n+  constructor(private readonly authService: AuthService) {}\n   @Post('login')\n   async login(@Body() authBody: AuthBody) {\n     console.log(authBody);\n     return '';\n"
+                },
+                {
+                    "date": 1725556351116,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { Controller, Body, Post } from '@nestjs/common';\n-\n+import { AuthService } from './auth.service';\n type AuthBody = { email: string; password: number };\n @Controller('auth')\n export class AuthController {\n   constructor(private readonly authService: AuthService) {}\n"
+                },
+                {
+                    "date": 1725556372963,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import { Controller, Body, Post } from '@nestjs/common';\n import { AuthService } from './auth.service';\n-type AuthBody = { email: string; password: number };\n+\n+ type AuthBody = { email: string; password: number };\n @Controller('auth')\n export class AuthController {\n   constructor(private readonly authService: AuthService) {}\n   @Post('login')\n"
+                },
+                {
+                    "date": 1725556380055,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Controller, Body, Post } from '@nestjs/common';\n import { AuthService } from './auth.service';\n \n- type AuthBody = { email: string; password: number };\n+expo type AuthBody = { email: string; password: number };\n @Controller('auth')\n export class AuthController {\n   constructor(private readonly authService: AuthService) {}\n   @Post('login')\n"
+                },
+                {
+                    "date": 1725569092455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Controller, Body, Post } from '@nestjs/common';\n import { AuthService } from './auth.service';\n \n-expo type AuthBody = { email: string; password: number };\n+export type AuthBody = { email: string; password: string };\n @Controller('auth')\n export class AuthController {\n   constructor(private readonly authService: AuthService) {}\n   @Post('login')\n"
+                },
+                {
+                    "date": 1725570816560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,7 @@\n export class AuthController {\n   constructor(private readonly authService: AuthService) {}\n   @Post('login')\n   async login(@Body() authBody: AuthBody) {\n-    console.log(authBody);\n     return '';\n   }\n }\n"
+                },
+                {
+                    "date": 1725570822247,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n export class AuthController {\n   constructor(private readonly authService: AuthService) {}\n   @Post('login')\n   async login(@Body() authBody: AuthBody) {\n-    return '';\n+    return ;\n   }\n }\n"
+                },
+                {
+                    "date": 1725570829841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n export class AuthController {\n   constructor(private readonly authService: AuthService) {}\n   @Post('login')\n   async login(@Body() authBody: AuthBody) {\n-    return ;\n+    return await this.;\n   }\n }\n"
+                },
+                {
+                    "date": 1725570902025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n export class AuthController {\n   constructor(private readonly authService: AuthService) {}\n   @Post('login')\n   async login(@Body() authBody: AuthBody) {\n-    return await this.;\n+    return await this.authService.;\n   }\n }\n"
+                },
+                {
+                    "date": 1725570907900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n export class AuthController {\n   constructor(private readonly authService: AuthService) {}\n   @Post('login')\n   async login(@Body() authBody: AuthBody) {\n-    return await this.authService.;\n+    return await this.authService.login(#);\n   }\n }\n"
+                },
+                {
+                    "date": 1725570914612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n export class AuthController {\n   constructor(private readonly authService: AuthService) {}\n   @Post('login')\n   async login(@Body() authBody: AuthBody) {\n-    return await this.authService.login(#);\n+    return await this.authService.login({ au});\n   }\n }\n"
+                }
+            ],
+            "date": 1725556060147,
+            "name": "Commit-0",
+            "content": "import { Controller } from '@nestjs/common';\n\n@Controller('auth')\nexport class AuthController {\n    @Post('login')\n  async login(@Body() authBody: { email: string; password: number }) {\n    console.log(authBody);\n    return '';\n  }\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,182 @@
+{
+    "sourceFile": "src/user/user.controller.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 41,
+            "patches": [
+                {
+                    "date": 1725544446893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1725544494086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,7 @@\n-import { Controller  } from '@nestjs/common';\n+import { Controller, Get } from '@nestjs/common';\n \n @Controller('user')\n+\n+\n+\n export class UserController {}\n"
+                },
+                {
+                    "date": 1725544500692,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { Controller, Get } from '@nestjs/common';\n \n-@Controller('user')\n+@Controller(:'user')\n \n \n \n export class UserController {}\n"
+                },
+                {
+                    "date": 1725544507402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { Controller, Get } from '@nestjs/common';\n \n-@Controller(:'user')\n+@Controller(prefix:'user')\n \n \n \n export class UserController {}\n"
+                },
+                {
+                    "date": 1725544516827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { Controller, Get } from '@nestjs/common';\n \n-@Controller(prefix:'user')\n+@Controller(prefix: 'user')\n \n \n \n export class UserController {}\n"
+                },
+                {
+                    "date": 1725544522668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,5 @@\n \n @Controller(prefix: 'user')\n \n \n-\n export class UserController {}\n"
+                },
+                {
+                    "date": 1725544529389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { Controller, Get } from '@nestjs/common';\n \n @Controller(prefix: 'user')\n-\n-\n-export class UserController {}\n+export class UserController {\n+    @\n+}\n"
+                },
+                {
+                    "date": 1725544534938,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import { Controller, Get } from '@nestjs/common';\n \n @Controller(prefix: 'user')\n export class UserController {\n+    \n     @\n }\n"
+                },
+                {
+                    "date": 1725544540855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n import { Controller, Get } from '@nestjs/common';\n \n @Controller(prefix: 'user')\n export class UserController {\n-    \n     @\n }\n"
+                },
+                {
+                    "date": 1725544549496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { Controller, Get } from '@nestjs/common';\n \n @Controller(prefix: 'user')\n export class UserController {\n-    @\n+    @Get()\n }\n"
+                },
+                {
+                    "date": 1725544557897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import { Controller, Get } from '@nestjs/common';\n+import path from 'path';\n \n @Controller(prefix: 'user')\n export class UserController {\n-    @Get()\n+    @Get(path: 'user')\n }\n"
+                },
+                {
+                    "date": 1725544565556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,6 @@\n \n @Controller(prefix: 'user')\n export class UserController {\n     @Get(path: 'user')\n+    get\n }\n"
+                },
+                {
+                    "date": 1725544578485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n \n @Controller(prefix: 'user')\n export class UserController {\n     @Get(path: 'user')\n-    get\n+    getUser\n }\n"
+                },
+                {
+                    "date": 1725544585656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,8 @@\n \n @Controller(prefix: 'user')\n export class UserController {\n     @Get(path: 'user')\n-    getUser\n+    getUser() {\n+        \n+    }\n }\n"
+                },
+                {
+                    "date": 1725544592779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n @Controller(prefix: 'user')\n export class UserController {\n     @Get(path: 'user')\n     getUser() {\n-        \n+        return \n     }\n }\n"
+                },
+                {
+                    "date": 1725544603730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n @Controller(prefix: 'user')\n export class UserController {\n     @Get(path: 'user')\n     getUser() {\n-        return \n+        return this.user\n     }\n }\n"
+                },
+                {
+                    "date": 1725544612784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n @Controller(prefix: 'user')\n export class UserController {\n     @Get(path: 'user')\n     getUser() {\n-        return this.user\n+        return this.\n     }\n }\n"
+                },
+                {
+                    "date": 1725544619574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n @Controller(prefix: 'user')\n export class UserController {\n     @Get(path: 'user')\n     getUser() {\n-        return this.\n+        return this.appService\n     }\n }\n"
+                },
+                {
+                    "date": 1725544626776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n @Controller(prefix: 'user')\n export class UserController {\n     @Get(path: 'user')\n     getUser() {\n-        return this.appService\n+        return this.appService.getUser\n     }\n }\n"
+                },
+                {
+                    "date": 1725544653605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import { Controller, Get } from '@nestjs/common';\n import path from 'path';\n-\n+// le \n @Controller(prefix: 'user')\n export class UserController {\n     @Get(path: 'user')\n     getUser() {\n-        return this.appService.getUser\n+        return this.appService.getUser();\n     }\n }\n"
+                },
+                {
+                    "date": 1725544666145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { Controller, Get } from '@nestjs/common';\n import path from 'path';\n-// le \n+// le prefix de tout les route concern  ant \n @Controller(prefix: 'user')\n export class UserController {\n     @Get(path: 'user')\n     getUser() {\n"
+                },
+                {
+                    "date": 1725544674189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { Controller, Get } from '@nestjs/common';\n import path from 'path';\n-// le prefix de tout les route concern  ant \n+// le prefix de tout les route concernant ce controller\n @Controller(prefix: 'user')\n export class UserController {\n     @Get(path: 'user')\n     getUser() {\n"
+                },
+                {
+                    "date": 1725544693849,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Controller, Get } from '@nestjs/common';\n import path from 'path';\n // le prefix de tout les route concernant ce controller\n-@Controller(prefix: 'user')\n+@Controller(prefix: 'users')\n export class UserController {\n     @Get(path: 'user')\n     getUser() {\n         return this.appService.getUser();\n"
+                },
+                {
+                    "date": 1725544700121,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import path from 'path';\n // le prefix de tout les route concernant ce controller\n @Controller(prefix: 'users')\n export class UserController {\n-    @Get(path: 'user')\n+    @Get(path: 'setings')\n     getUser() {\n         return this.appService.getUser();\n     }\n }\n"
+                },
+                {
+                    "date": 1725544722560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import path from 'path';\n // le prefix de tout les route concernant ce controller\n @Controller(prefix: 'users')\n export class UserController {\n-    @Get(path: 'setings')\n+    @Get(path:'setings')\n     getUser() {\n         return this.appService.getUser();\n     }\n }\n"
+                },
+                {
+                    "date": 1725544844877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import path from 'path';\n // le prefix de tout les route concernant ce controller\n @Controller(prefix: 'users')\n export class UserController {\n-    @Get(path:'setings')\n-    getUser() {\n+    @Get(path: 'setings')\n+    getUsers() {\n         return this.appService.getUser();\n     }\n }\n"
+                },
+                {
+                    "date": 1725544970941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import path from 'path';\n // le prefix de tout les route concernant ce controller\n @Controller(prefix: 'users')\n export class UserController {\n-    @Get(path: 'setings')\n+    @Get(path: '/setings')\n     getUsers() {\n         return this.appService.getUser();\n     }\n }\n"
+                },
+                {
+                    "date": 1725544980382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import path from 'path';\n // le prefix de tout les route concernant ce controller\n @Controller(prefix: 'users')\n export class UserController {\n-    @Get(path: '/setings')\n+    @Get(path: 'setings')\n     getUsers() {\n         return this.appService.getUser();\n     }\n }\n"
+                },
+                {
+                    "date": 1725544985866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import path from 'path';\n // le prefix de tout les route concernant ce controller\n @Controller(prefix: 'users')\n export class UserController {\n-    @Get(path: 'setings')\n+    @Get(path: 'settings')\n     getUsers() {\n         return this.appService.getUser();\n     }\n }\n"
+                },
+                {
+                    "date": 1725545032997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n import path from 'path';\n // le prefix de tout les route concernant ce controller\n @Controller(prefix: 'users')\n export class UserController {\n+    \n     @Get(path: 'settings')\n     getUsers() {\n         return this.appService.getUser();\n     }\n"
+                },
+                {
+                    "date": 1725545040080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import path from 'path';\n // le prefix de tout les route concernant ce controller\n @Controller(prefix: 'users')\n export class UserController {\n-    \n+    constructor()\n     @Get(path: 'settings')\n     getUsers() {\n         return this.appService.getUser();\n     }\n"
+                },
+                {
+                    "date": 1725545047742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import path from 'path';\n // le prefix de tout les route concernant ce controller\n @Controller(prefix: 'users')\n export class UserController {\n-    constructor()\n+    constructor(private readonly)\n     @Get(path: 'settings')\n     getUsers() {\n         return this.appService.getUser();\n     }\n"
+                },
+                {
+                    "date": 1725545054950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import path from 'path';\n // le prefix de tout les route concernant ce controller\n @Controller(prefix: 'users')\n export class UserController {\n-    constructor(private readonly)\n+    constructor(private readonly appServi)\n     @Get(path: 'settings')\n     getUsers() {\n         return this.appService.getUser();\n     }\n"
+                },
+                {
+                    "date": 1725545066323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import path from 'path';\n // le prefix de tout les route concernant ce controller\n @Controller(prefix: 'users')\n export class UserController {\n-    constructor(private readonly appServi)\n+    constructor(private readonly appService:)\n     @Get(path: 'settings')\n     getUsers() {\n         return this.appService.getUser();\n     }\n"
+                },
+                {
+                    "date": 1725545072413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import path from 'path';\n // le prefix de tout les route concernant ce controller\n @Controller(prefix: 'users')\n export class UserController {\n-    constructor(private readonly appService:)\n+    constructor(private readonly appService: App)\n     @Get(path: 'settings')\n     getUsers() {\n         return this.appService.getUser();\n     }\n"
+                },
+                {
+                    "date": 1725545190729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n import { Controller, Get } from '@nestjs/common';\n import path from 'path';\n+import { AppService } from 'src/app.service';\n // le prefix de tout les route concernant ce controller\n @Controller(prefix: 'users')\n export class UserController {\n-    constructor(private readonly appService: App)\n+    constructor(private readonly appService: AppService) \n     @Get(path: 'settings')\n     getUsers() {\n         return this.appService.getUser();\n     }\n"
+                },
+                {
+                    "date": 1725545205002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,10 @@\n import { AppService } from 'src/app.service';\n // le prefix de tout les route concernant ce controller\n @Controller(prefix: 'users')\n export class UserController {\n-    constructor(private readonly appService: AppService) \n+    constructor(private readonly appService: AppService) {}\n+    \n     @Get(path: 'settings')\n     getUsers() {\n         return this.appService.getUser();\n     }\n"
+                },
+                {
+                    "date": 1725545289390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n import { AppService } from 'src/app.service';\n // le prefix de tout les route concernant ce controller\n @Controller(prefix: 'users')\n export class UserController {\n-    constructor(private readonly appService: AppService) {}\n-    \n+    constructor(private readonly user: AppService) {}\n+\n     @Get(path: 'settings')\n     getUsers() {\n         return this.appService.getUser();\n     }\n"
+                },
+                {
+                    "date": 1725545295595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { AppService } from 'src/app.service';\n // le prefix de tout les route concernant ce controller\n @Controller(prefix: 'users')\n export class UserController {\n-    constructor(private readonly user: AppService) {}\n+    constructor(private readonly userS: AppService) {}\n \n     @Get(path: 'settings')\n     getUsers() {\n         return this.appService.getUser();\n"
+                },
+                {
+                    "date": 1725545309676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n import { Controller, Get } from '@nestjs/common';\n import path from 'path';\n-import { AppService } from 'src/app.service';\n+import { userService } from 'src/app.service';\n // le prefix de tout les route concernant ce controller\n @Controller(prefix: 'users')\n export class UserController {\n-    constructor(private readonly userS: AppService) {}\n+    constructor(private readonly userService: AppService) {}\n \n     @Get(path: 'settings')\n     getUsers() {\n         return this.appService.getUser();\n"
+                },
+                {
+                    "date": 1725545317131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { Controller, Get } from '@nestjs/common';\n import path from 'path';\n-import { userService } from 'src/app.service';\n+import { userService } from 'src/';\n // le prefix de tout les route concernant ce controller\n @Controller(prefix: 'users')\n export class UserController {\n     constructor(private readonly userService: AppService) {}\n"
+                },
+                {
+                    "date": 1725545323136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { Controller, Get } from '@nestjs/common';\n import path from 'path';\n-import { userService } from 'src/user.';\n+import { userService } from 'src/user/';\n // le prefix de tout les route concernant ce controller\n @Controller(prefix: 'users')\n export class UserController {\n     constructor(private readonly userService: AppService) {}\n"
+                }
+            ],
+            "date": 1725544446893,
+            "name": "Commit-0",
+            "content": "import { Controller  } from '@nestjs/common';\n\n@Controller('user')\nexport class UserController {}\n"
+        }
+    ]
+}

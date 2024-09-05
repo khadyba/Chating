@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/user/user.module.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1725543796284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1725543808167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { Module } from '@nestjs/common';\n import { UserController } from './user.controller';\n \n @Module({\n-  controllers: [UserController]module\n+  controllers: [UserController]\n })\n export class UserModule {}\n"
+                },
+                {
+                    "date": 1725543838898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { Module } from '@nestjs/common';\n import { UserController } from './user.controller';\n \n @Module({\n-  controllers: [UserController]\n+  controllers: [UserController],\n })\n export class UserModule {}\n"
+                },
+                {
+                    "date": 1725550320284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n import { Module } from '@nestjs/common';\n import { UserController } from './user.controller';\n+import { UserService } from './user.service';\n \n @Module({\n   controllers: [UserController],\n+  providers: [UserService],\n })\n-export class UserModule {}\n+export class UserModule {} \n"
+                },
+                {
+                    "date": 1725552186704,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,7 @@\n import { UserService } from './user.service';\n \n @Module({\n   controllers: [UserController],\n-  providers: [UserService],\n+  providers: [UserService ],\n })\n-export class UserModule {} \n+export class UserModule {}\n"
+                },
+                {
+                    "date": 1725552195903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,7 @@\n import { UserService } from './user.service';\n \n @Module({\n   controllers: [UserController],\n-  providers: [UserService ],\n+  providers: [UserService ,  Prisma],\n })\n export class UserModule {}\n"
+                },
+                {
+                    "date": 1725552201990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import { Module } from '@nestjs/common';\n import { UserController } from './user.controller';\n import { UserService } from './user.service';\n+import { PrismaService } from 'src/prisma.service';\n \n @Module({\n   controllers: [UserController],\n-  providers: [UserService ,  Prisma],\n+  providers: [UserService  PrismaService],\n })\n export class UserModule {}\n"
+                },
+                {
+                    "date": 1725552207507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n import { PrismaService } from 'src/prisma.service';\n \n @Module({\n   controllers: [UserController],\n-  providers: [UserService  PrismaService],\n+  providers: [UserService , PrismaService],\n })\n export class UserModule {}\n"
+                }
+            ],
+            "date": 1725543796283,
+            "name": "Commit-0",
+            "content": "import { Module } from '@nestjs/common';\nimport { UserController } from './user.controller';\n\n@Module({\n  controllers: [UserController]module\n})\nexport class UserModule {}\n"
+        }
+    ]
+}
