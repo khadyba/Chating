@@ -6,7 +6,7 @@ import { RequestWithUser } from './jwt.strategy';
 import { UserService } from 'src/user/user.service';
 
 export type AuthBody = { email: string; password: string };
-export type CreateUser = { email: string; firstname: string; password: string };
+export type CreateUser = { email: string; fitname: string; password: string };
 
 // 1. Envoie un mot de passe et un email.
 // 2. L' API te renvois un token securisé "acb123"

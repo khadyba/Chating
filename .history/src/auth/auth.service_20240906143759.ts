@@ -46,7 +46,7 @@ export class AuthService {
       },
     });
 
-    if (existingUser) {
+    if (!existingUser) {
       throw new Error('un compte existe déja à cette adresse email');
     }
     const hashPassword = await this.hashPassword({ password });

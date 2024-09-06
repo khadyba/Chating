@@ -3,7 +3,7 @@ import { AuthBody, CreateUser } from './auth.controller';
 import { PrismaService } from 'src/prisma.service';
 import { hash, compare } from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
-
+import passport from 'passport';
 // import { UserPayload } from './jwt.strategy';
 
 @Injectable()
@@ -46,23 +46,20 @@ export class AuthService {
       },
     });
 
-    if (existingUser) {
+    if (!existingUser) {
       throw new Error('un compte existe déja à cette adresse email');
     }
-    const hashPassword = await this.hashPassword({ password });
+      const hashPassword = await this.hashPassword({ password });
 
-    const createUser = await this.prisma.user.create({
-      data: {
-        email,
-        password: hashPassword,
-        firstname,
-      },
-    });
-
+      this.prisma.user.create({
+        data:
+      })
+   
     return this.authenticateUser({
-      userId: createUser.id,
+      userId: existingUser.id,
     });
   }
+
 
   private async hashPassword({ password }: { password: string }) {
     const hashPassword = await hash(password, 10);

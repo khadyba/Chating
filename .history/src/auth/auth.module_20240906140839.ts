@@ -12,10 +12,12 @@ import { UserService } from 'src/user/user.service';
     JwtModule.register({
       global: true,
       secret: process.env.JWT_SECRET,
-      signOptions: { expiresIn: '60s' },
+      signOptions: { expiresIn: '30d' },
     }),
   ],
   controllers: [AuthController],
-  providers: [AuthService, PrismaService, JwtStrategy, UserService],
+  providers: [AuthService, PrismaService, JwtStrategy,
+    UserService,
+  ],
 })
 export class AuthModule {}

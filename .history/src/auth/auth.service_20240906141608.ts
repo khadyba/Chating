@@ -1,9 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { AuthBody, CreateUser } from './auth.controller';
+import { AuthBody } from './auth.controller';
 import { PrismaService } from 'src/prisma.service';
 import { hash, compare } from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
-
 // import { UserPayload } from './jwt.strategy';
 
 @Injectable()
@@ -37,33 +36,6 @@ export class AuthService {
       userId: existingUser.id,
     });
   }
-
-  async register({ registerBody }: { registerBody: CreateUser }) {
-    const { email, firstname, password } = registerBody;
-    const existingUser = await this.prisma.user.findUnique({
-      where: {
-        email,
-      },
-    });
-
-    if (existingUser) {
-      throw new Error('un compte existe déja à cette adresse email');
-    }
-    const hashPassword = await this.hashPassword({ password });
-
-    const createUser = await this.prisma.user.create({
-      data: {
-        email,
-        password: hashPassword,
-        firstname,
-      },
-    });
-
-    return this.authenticateUser({
-      userId: createUser.id,
-    });
-  }
-
   private async hashPassword({ password }: { password: string }) {
     const hashPassword = await hash(password, 10);
 
@@ -86,4 +58,5 @@ export class AuthService {
       access_token: this.jwtService.sign(payload),
     };
   }
+  
 }
