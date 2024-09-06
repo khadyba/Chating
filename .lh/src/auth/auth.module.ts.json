@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 17,
             "patches": [
                 {
                     "date": 1725555273244,
@@ -16,6 +16,66 @@
                 {
                     "date": 1725557062797,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,7 @@\n import { AuthService } from './auth.service';\n \n @Module({\n   controllers: [AuthController],\n-  providers: [AuthService, ],\n+  providers: [AuthService, Prisma],\n })\n export class AuthModule {}\n"
+                },
+                {
+                    "date": 1725615636730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import { Module } from '@nestjs/common';\n import { AuthController } from './auth.controller';\n import { AuthService } from './auth.service';\n+import { PrismaService } from 'src/prisma.service';\n \n @Module({\n   controllers: [AuthController],\n-  providers: [AuthService, Prisma],\n+  providers: [AuthService, PrismaService, ],\n })\n export class AuthModule {}\n"
+                },
+                {
+                    "date": 1725615643542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n import { Module } from '@nestjs/common';\n import { AuthController } from './auth.controller';\n import { AuthService } from './auth.service';\n import { PrismaService } from 'src/prisma.service';\n+import { JwtService } from '@nestjs/jwt';\n \n @Module({\n   controllers: [AuthController],\n-  providers: [AuthService, PrismaService, ],\n+  providers: [AuthService, PrismaService, JwtService],\n })\n export class AuthModule {}\n"
+                },
+                {
+                    "date": 1725615739834,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n import { PrismaService } from 'src/prisma.service';\n import { JwtService } from '@nestjs/jwt';\n \n @Module({\n+  impo\n   controllers: [AuthController],\n   providers: [AuthService, PrismaService, JwtService],\n })\n export class AuthModule {}\n"
+                },
+                {
+                    "date": 1725615747525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import { PrismaService } from 'src/prisma.service';\n import { JwtService } from '@nestjs/jwt';\n \n @Module({\n-  impo\n+  imports[]\n   controllers: [AuthController],\n   providers: [AuthService, PrismaService, JwtService],\n })\n export class AuthModule {}\n"
+                },
+                {
+                    "date": 1725615771392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,15 @@\n import { PrismaService } from 'src/prisma.service';\n import { JwtService } from '@nestjs/jwt';\n \n @Module({\n-  imports[]\n+  imports [\n+    JwtModule.register({\n+      global: true,\n+      secret: jwtConstants.secret,\n+      signOptions: { expiresIn: '60s' },\n+    }),\n+  ]\n   controllers: [AuthController],\n   providers: [AuthService, PrismaService, JwtService],\n })\n export class AuthModule {}\n"
+                },
+                {
+                    "date": 1725615791570,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,14 +5,15 @@\n import { JwtService } from '@nestjs/jwt';\n \n @Module({\n   imports [\n+\n     JwtModule.register({\n       global: true,\n       secret: jwtConstants.secret,\n       signOptions: { expiresIn: '60s' },\n     }),\n-  ]\n+  ],\n   controllers: [AuthController],\n   providers: [AuthService, PrismaService, JwtService],\n })\n export class AuthModule {}\n"
+                },
+                {
+                    "date": 1725615798802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,8 @@\n import { JwtService } from '@nestjs/jwt';\n \n @Module({\n   imports [\n-\n     JwtModule.register({\n       global: true,\n       secret: jwtConstants.secret,\n       signOptions: { expiresIn: '60s' },\n"
+                },
+                {
+                    "date": 1725615961718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Module } from '@nestjs/common';\n import { AuthController } from './auth.controller';\n import { AuthService } from './auth.service';\n import { PrismaService } from 'src/prisma.service';\n-import { JwtService } from '@nestjs/jwt';\n+import { JwtService,  } from '@nestjs/jwt';\n \n @Module({\n   imports [\n     JwtModule.register({\n"
+                },
+                {
+                    "date": 1725616516893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,15 @@\n import { Module } from '@nestjs/common';\n import { AuthController } from './auth.controller';\n import { AuthService } from './auth.service';\n import { PrismaService } from 'src/prisma.service';\n-import { JwtService,  } from '@nestjs/jwt';\n+import { JwtService, JwtModule } from '@nestjs/jwt';\n \n @Module({\n   imports [\n     JwtModule.register({\n       global: true,\n-      secret: jwtConstants.secret,\n+      secret: ro.secret,\n       signOptions: { expiresIn: '60s' },\n     }),\n   ],\n   controllers: [AuthController],\n"
+                },
+                {
+                    "date": 1725616537685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n @Module({\n   imports [\n     JwtModule.register({\n       global: true,\n-      secret: ro.secret,\n+      secret: process.env.secret,\n       signOptions: { expiresIn: '60s' },\n     }),\n   ],\n   controllers: [AuthController],\n"
+                },
+                {
+                    "date": 1725616549750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n @Module({\n   imports [\n     JwtModule.register({\n       global: true,\n-      secret: process.env.secret,\n+      secret: process.env.,\n       signOptions: { expiresIn: '60s' },\n     }),\n   ],\n   controllers: [AuthController],\n"
+                },
+                {
+                    "date": 1725616554882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n @Module({\n   imports [\n     JwtModule.register({\n       global: true,\n-      secret: process.env.,\n+      secret: process.env.JWT,\n       signOptions: { expiresIn: '60s' },\n     }),\n   ],\n   controllers: [AuthController],\n"
+                },
+                {
+                    "date": 1725616580191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,12 +4,12 @@\n import { PrismaService } from 'src/prisma.service';\n import { JwtService, JwtModule } from '@nestjs/jwt';\n \n @Module({\n-  imports [\n+  imports: [\n     JwtModule.register({\n       global: true,\n-      secret: process.env.JWT,\n+      secret: process.env.JWT_SECRET,\n       signOptions: { expiresIn: '60s' },\n     }),\n   ],\n   controllers: [AuthController],\n"
+                },
+                {
+                    "date": 1725616612955,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n import { AuthService } from './auth.service';\n import { PrismaService } from 'src/prisma.service';\n import { JwtService, JwtModule } from '@nestjs/jwt';\n \n+\n @Module({\n   imports: [\n     JwtModule.register({\n       global: true,\n"
+                },
+                {
+                    "date": 1725616619289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { AuthService } from './auth.service';\n import { PrismaService } from 'src/prisma.service';\n import { JwtService, JwtModule } from '@nestjs/jwt';\n \n-console.log\n+console.log()\n @Module({\n   imports: [\n     JwtModule.register({\n       global: true,\n"
                 }
             ],
             "date": 1725555273244,

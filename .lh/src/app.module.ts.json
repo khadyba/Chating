@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 12,
             "patches": [
                 {
                     "date": 1725549424477,
@@ -16,6 +16,46 @@
                 {
                     "date": 1725549447537,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,8 @@\n import { UserModule } from './user/user.module';\n \n @Module({\n   imports: [UserModule],\n-  controllers: [AppCont],\n-  providers: [AppService],\n+  controllers: [],\n+  providers: [],\n })\n export class AppModule {}\n"
+                },
+                {
+                    "date": 1725617410072,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import { Module } from '@nestjs/common';\n import { UserModule } from './user/user.module';\n+import { AuthModule } from './auth/auth.module';\n \n @Module({\n-  imports: [UserModule],\n+  imports: [UserModule, AuthModule, ],\n   controllers: [],\n   providers: [],\n })\n export class AppModule {}\n"
+                },
+                {
+                    "date": 1725617415636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { UserModule } from './user/user.module';\n import { AuthModule } from './auth/auth.module';\n \n @Module({\n-  imports: [UserModule, AuthModule, ],\n+  imports: [UserModule, AuthModule, Config],\n   controllers: [],\n   providers: [],\n })\n export class AppModule {}\n"
+                },
+                {
+                    "date": 1725617422462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n import { Module } from '@nestjs/common';\n import { UserModule } from './user/user.module';\n import { AuthModule } from './auth/auth.module';\n+import { ConfigModule } from '@nestjs/config';\n \n @Module({\n-  imports: [UserModule, AuthModule, Config],\n+  imports: [UserModule, AuthModule, ConfigModule.for],\n   controllers: [],\n   providers: [],\n })\n export class AppModule {}\n"
+                },
+                {
+                    "date": 1725617480336,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,11 @@\n import { AuthModule } from './auth/auth.module';\n import { ConfigModule } from '@nestjs/config';\n \n @Module({\n-  imports: [UserModule, AuthModule, ConfigModule.for],\n+  imports: [UserModule, AuthModule, ConfigModule.forRoot(\n+    \n+  )],\n   controllers: [],\n   providers: [],\n })\n export class AppModule {}\n"
+                },
+                {
+                    "date": 1725617486367,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,11 @@\n import { ConfigModule } from '@nestjs/config';\n \n @Module({\n   imports: [UserModule, AuthModule, ConfigModule.forRoot(\n-    \n+    {\n+\n+    }\n   )],\n   controllers: [],\n   providers: [],\n })\n"
+                },
+                {
+                    "date": 1725617491645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \n @Module({\n   imports: [UserModule, AuthModule, ConfigModule.forRoot(\n     {\n-\n+          is\n     }\n   )],\n   controllers: [],\n   providers: [],\n"
+                },
+                {
+                    "date": 1725617498073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \n @Module({\n   imports: [UserModule, AuthModule, ConfigModule.forRoot(\n     {\n-          is\n+          isGlobal: true\n     }\n   )],\n   controllers: [],\n   providers: [],\n"
+                },
+                {
+                    "date": 1725617506830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n \n @Module({\n   imports: [UserModule, AuthModule, ConfigModule.forRoot(\n     {\n-          isGlobal: true\n-    }\n+          isGlobal: true,\n+    },\n   )],\n   controllers: [],\n   providers: [],\n })\n"
+                },
+                {
+                    "date": 1725617518995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \n @Module({\n   imports: [UserModule, AuthModule, ConfigModule.forRoot(\n     {\n-          isGlobal: true,\n+      isGlobal: true,\n     },\n   )],\n   controllers: [],\n   providers: [],\n"
+                },
+                {
+                    "date": 1725619304143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,15 @@\n import { AuthModule } from './auth/auth.module';\n import { ConfigModule } from '@nestjs/config';\n \n @Module({\n-  imports: [UserModule, AuthModule, ConfigModule.forRoot(\n-    {\n+  imports: [\n+    ConfigModule.forRoot({\n       isGlobal: true,\n-    },\n-  )],\n+    }),\n+    UserModule,\n+    AuthModule,\n+  ],\n   controllers: [],\n   providers: [],\n })\n export class AppModule {}\n"
                 }
             ],
             "date": 1725549424477,

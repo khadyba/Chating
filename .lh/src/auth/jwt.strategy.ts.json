@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/auth/jwt.strategy.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1725618013479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1725618022230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,22 @@\n-jwt.strategy.ts\n\\ No newline at end of file\n+import { ExtractJwt, Strategy } from 'passport-jwt';\n+import { PassportStrategy } from '@nestjs/passport';\n+import { Injectable } from '@nestjs/common';\n+\n+export type UserPayload = { userId: string };\n+export type RequestWithUser = {\n+  user: UserPayload;\n+};\n+@Injectable()\n+export class JwtStrategy extends PassportStrategy(Strategy) {\n+  constructor() {\n+    super({\n+      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),\n+      ignoreExpiration: false,\n+      secretOrKey: process.env.JWT_SECRET,\n+    });\n+  }\n+\n+  async validate({ userId }: UserPayload) {\n+    return { userId };\n+  }\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725622115324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { ExtractJwt, Strategy } from 'passport-jwt';\n import { PassportStrategy } from '@nestjs/passport';\n import { Injectable } from '@nestjs/common';\n \n-export type UserPayload = { userId: string };\n+export type UserPayload = { userId: num };\n export type RequestWithUser = {\n   user: UserPayload;\n };\n @Injectable()\n@@ -18,5 +18,5 @@\n \n   async validate({ userId }: UserPayload) {\n     return { userId };\n   }\n-}\n\\ No newline at end of file\n+}\n"
+                }
+            ],
+            "date": 1725618013479,
+            "name": "Commit-0",
+            "content": "jwt.strategy.ts"
+        }
+    ]
+}
