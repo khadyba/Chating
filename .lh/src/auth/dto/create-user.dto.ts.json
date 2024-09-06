@@ -1,0 +1,146 @@
+{
+    "sourceFile": "src/auth/dto/create-user.dto.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 32,
+            "patches": [
+                {
+                    "date": 1725636187103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1725636238996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,6 @@\n   email: string;\n \n   @IsNotEmpty()\n   password: string;\n-}\n\\ No newline at end of file\n+  \n+}\n"
+                },
+                {
+                    "date": 1725636245098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,9 @@\n   email: string;\n \n   @IsNotEmpty()\n   password: string;\n-  \n+\n+\n+  @IsNotEmpty()\n+  : string;\n }\n"
+                },
+                {
+                    "date": 1725636252190,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,6 @@\n   password: string;\n \n \n   @IsNotEmpty()\n-  : string;\n+  firstname: string;\n }\n"
+                },
+                {
+                    "date": 1725636269965,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,7 @@\n \n   @IsNotEmpty()\n   password: string;\n \n-\n-  @IsNotEmpty()\n+  @IsNot()\n   firstname: string;\n }\n"
+                },
+                {
+                    "date": 1725636276731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n-import { IsEmail, IsNotEmpty } from 'class-validator';\n+import { IsEmail, IsNotEmpty, IsString } from 'class-validator';\n \n export class CreateUserDto {\n   @IsEmail()\n   email: string;\n \n   @IsNotEmpty()\n   password: string;\n \n-  @IsNot()\n+  @IsString()\n   firstname: string;\n }\n"
+                },
+                {
+                    "date": 1725636344090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n import { IsEmail, IsNotEmpty, IsString } from 'class-validator';\n \n export class CreateUserDto {\n-  @IsEmail()\n+  @IsEmail(\n+    \n+  )\n   email: string;\n \n   @IsNotEmpty()\n   password: string;\n"
+                },
+                {
+                    "date": 1725636349658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import { IsEmail, IsNotEmpty, IsString } from 'class-validator';\n \n export class CreateUserDto {\n   @IsEmail(\n+    {},\n     \n   )\n   email: string;\n \n"
+                },
+                {
+                    "date": 1725636356621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,11 @@\n \n export class CreateUserDto {\n   @IsEmail(\n     {},\n-    \n+    {\n+        message=''\n+    }\n   )\n   email: string;\n \n   @IsNotEmpty()\n"
+                },
+                {
+                    "date": 1725636363389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n export class CreateUserDto {\n   @IsEmail(\n     {},\n     {\n-        message=''\n+        message: ''\n     }\n   )\n   email: string;\n \n"
+                },
+                {
+                    "date": 1725636369338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n export class CreateUserDto {\n   @IsEmail(\n     {},\n     {\n-        message: ''\n+        message: 'Vous devez'\n     }\n   )\n   email: string;\n \n"
+                },
+                {
+                    "date": 1725636375922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n export class CreateUserDto {\n   @IsEmail(\n     {},\n     {\n-        message: 'Vous devez'\n+        message: 'Vous devez fournir une'\n     }\n   )\n   email: string;\n \n"
+                },
+                {
+                    "date": 1725636383871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n export class CreateUserDto {\n   @IsEmail(\n     {},\n     {\n-        message: 'Vous devez fournir une'\n+        message: 'Vous devez fournir une adresse email'\n     }\n   )\n   email: string;\n \n"
+                },
+                {
+                    "date": 1725636392176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n export class CreateUserDto {\n   @IsEmail(\n     {},\n     {\n-        message: 'Vous devez fournir une adresse email'\n+        message: 'Vous devez fournir une adresse email valide.'\n     }\n   )\n   email: string;\n \n"
+                },
+                {
+                    "date": 1725636397846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n export class CreateUserDto {\n   @IsEmail(\n     {},\n     {\n-        message: 'Vous devez fournir une adresse email valide.'\n+    message: 'Vous devez fournir une adresse email valide.',\n     }\n   )\n   email: string;\n \n"
+                },
+                {
+                    "date": 1725636415548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,14 +3,15 @@\n export class CreateUserDto {\n   @IsEmail(\n     {},\n     {\n-    message: 'Vous devez fournir une adresse email valide.',\n-    }\n+      message: 'Vous devez fournir une adresse email valide.',\n+    },\n   )\n   email: string;\n \n   @IsNotEmpty()\n+  @\n   password: string;\n \n   @IsString()\n   firstname: string;\n"
+                },
+                {
+                    "date": 1725636428166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   )\n   email: string;\n \n   @IsNotEmpty()\n-  @\n+  @H\n   password: string;\n \n   @IsString()\n   firstname: string;\n"
+                },
+                {
+                    "date": 1725636443446,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   )\n   email: string;\n \n   @IsNotEmpty()\n-  @H\n+  @Min\n   password: string;\n \n   @IsString()\n   firstname: string;\n"
+                },
+                {
+                    "date": 1725636454337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { IsEmail, IsNotEmpty, IsString } from 'class-validator';\n+import { IsEmail, IsNotEmpty, IsString, MinLength } from 'class-validator';\n \n export class CreateUserDto {\n   @IsEmail(\n     {},\n@@ -9,9 +9,9 @@\n   )\n   email: string;\n \n   @IsNotEmpty()\n-  @Min\n+  @MinLength(min:)\n   password: string;\n \n   @IsString()\n   firstname: string;\n"
+                },
+                {
+                    "date": 1725636461092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   )\n   email: string;\n \n   @IsNotEmpty()\n-  @MinLength(min:)\n+  @MinLength( 8)\n   password: string;\n \n   @IsString()\n   firstname: string;\n"
+                },
+                {
+                    "date": 1725636478152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,12 @@\n   )\n   email: string;\n \n   @IsNotEmpty()\n-  @MinLength( 8)\n+  @MinLength(8)\n   password: string;\n \n-  @IsString()\n+  @IsString({\n+    \n+  })\n   firstname: string;\n }\n"
+                },
+                {
+                    "date": 1725636484182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,8 @@\n   @MinLength(8)\n   password: string;\n \n   @IsString({\n-    \n+    message: ''\n   })\n   firstname: string;\n }\n"
+                },
+                {
+                    "date": 1725636490977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,8 @@\n   @MinLength(8)\n   password: string;\n \n   @IsString({\n-    message: ''\n+    message: 'Vous dev'\n   })\n   firstname: string;\n }\n"
+                },
+                {
+                    "date": 1725636496043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,20 @@\n+import { IsEmail, IsNotEmpty, IsString, MinLength } from 'class-validator';\n+\n+export class CreateUserDto {\n+  @IsEmail(\n+    {},\n+    {\n+      message: 'Vous devez fournir une adresse email valide.',\n+    },\n+  )\n+  email: string;\n+\n+  @IsNotEmpty()\n+  @MinLength(8)\n+  password: string;\n+\n+  @IsString({\n+    message: 'Vous deve'\n+  })\n+  firstname: string;\n+}\n"
+                },
+                {
+                    "date": 1725636503860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,28 +13,8 @@\n   @MinLength(8)\n   password: string;\n \n   @IsString({\n-    message: 'Vous deve'\n+    message: 'Vous devez fournir un '\n   })\n   firstname: string;\n }\n-import { IsEmail, IsNotEmpty, IsString, MinLength } from 'class-validator';\n-\n-export class CreateUserDto {\n-  @IsEmail(\n-    {},\n-    {\n-      message: 'Vous devez fournir une adresse email valide.',\n-    },\n-  )\n-  email: string;\n-\n-  @IsNotEmpty()\n-  @MinLength(8)\n-  password: string;\n-\n-  @IsString({\n-    message: 'Vous dev'\n-  })\n-  firstname: string;\n-}\n"
+                },
+                {
+                    "date": 1725636511433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,8 @@\n   @MinLength(8)\n   password: string;\n \n   @IsString({\n-    message: 'Vous devez fournir un '\n+    message: 'Vous devez fournir un prénom',\n   })\n   firstname: string;\n }\n"
+                },
+                {
+                    "date": 1725636601839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   )\n   email: string;\n \n   @IsNotEmpty()\n-  @MinLength(8)\n+  @MinLength(8 )\n   password: string;\n \n   @IsString({\n     message: 'Vous devez fournir un prénom',\n"
+                },
+                {
+                    "date": 1725636609003,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,11 @@\n   )\n   email: string;\n \n   @IsNotEmpty()\n-  @MinLength(8 )\n+  @MinLength(8 {\n+    message: ''\n+  })\n   password: string;\n \n   @IsString({\n     message: 'Vous devez fournir un prénom',\n"
+                },
+                {
+                    "date": 1725636620871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   email: string;\n \n   @IsNotEmpty()\n   @MinLength(8 {\n-    message: ''\n+    message: 'Votre'\n   })\n   password: string;\n \n   @IsString({\n"
+                },
+                {
+                    "date": 1725636630429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   email: string;\n \n   @IsNotEmpty()\n   @MinLength(8 {\n-    message: 'Votre'\n+    message: 'Votre mot de passe doit fair'\n   })\n   password: string;\n \n   @IsString({\n"
+                },
+                {
+                    "date": 1725636640177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   email: string;\n \n   @IsNotEmpty()\n   @MinLength(8 {\n-    message: 'Votre mot de passe doit fair'\n+    message: 'Votre mot de passe doit faire plus de 8 '\n   })\n   password: string;\n \n   @IsString({\n"
+                },
+                {
+                    "date": 1725636665944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,10 @@\n   )\n   email: string;\n \n   @IsNotEmpty()\n-  @MinLength(8 {\n-    message: 'Votre mot de passe doit faire plus de 8 '\n+  @MinLength(8, {\n+    message: 'Votre mot de passe doit faire plus de 8 charactére'\n   })\n   password: string;\n \n   @IsString({\n"
+                },
+                {
+                    "date": 1725636672136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   email: string;\n \n   @IsNotEmpty()\n   @MinLength(8, {\n-    message: 'Votre mot de passe doit faire plus de 8 charactére'\n+    message: 'Votre mot de passe doit faire plus de 8 charactére',\n   })\n   password: string;\n \n   @IsString({\n"
+                }
+            ],
+            "date": 1725636187103,
+            "name": "Commit-0",
+            "content": "import { IsEmail, IsNotEmpty } from 'class-validator';\n\nexport class CreateUserDto {\n  @IsEmail()\n  email: string;\n\n  @IsNotEmpty()\n  password: string;\n}"
+        }
+    ]
+}

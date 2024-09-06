@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 45,
+            "activePatchIndex": 50,
             "patches": [
                 {
                     "date": 1725549392145,
@@ -188,6 +188,26 @@
                 {
                     "date": 1725554883648,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n   }\n   async getUser({ userId }: { userId: number }) {\n     const user = await this.prisma.user.findUnique({\n       where: {\n-        id: userId,  // Correctement typé en Int\n+        id: userId,\n       },\n       select: {\n         id: true,\n         email: true,\n@@ -26,6 +26,5 @@\n       },\n     });\n     return user;\n   }\n-  \n }\n"
+                },
+                {
+                    "date": 1725627495151,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n \n @Injectable()\n export class UserService {\n   constructor(private readonly prisma: PrismaService) {}\n+  \n   async getUsers() {\n     const users = await this.prisma.user.findMany({\n       select: {\n         id: true,\n@@ -16,9 +17,9 @@\n   }\n   async getUser({ userId }: { userId: number }) {\n     const user = await this.prisma.user.findUnique({\n       where: {\n-        id: userId,\n+        id: +userId,\n       },\n       select: {\n         id: true,\n         email: true,\n"
+                },
+                {
+                    "date": 1725627502212,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n @Injectable()\n export class UserService {\n   constructor(private readonly prisma: PrismaService) {}\n-  \n+  // gécup\n   async getUsers() {\n     const users = await this.prisma.user.findMany({\n       select: {\n         id: true,\n"
+                },
+                {
+                    "date": 1725627508261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n @Injectable()\n export class UserService {\n   constructor(private readonly prisma: PrismaService) {}\n-  // gécup\n+  // gécupérer tout les \n   async getUsers() {\n     const users = await this.prisma.user.findMany({\n       select: {\n         id: true,\n"
+                },
+                {
+                    "date": 1725627515009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n @Injectable()\n export class UserService {\n   constructor(private readonly prisma: PrismaService) {}\n-  // gécupérer tout les \n+  // gécupérer tout les users\n   async getUsers() {\n     const users = await this.prisma.user.findMany({\n       select: {\n         id: true,\n@@ -14,8 +14,9 @@\n       },\n     });\n     return users;\n   }\n+  \n   async getUser({ userId }: { userId: number }) {\n     const user = await this.prisma.user.findUnique({\n       where: {\n         id: +userId,\n"
+                },
+                {
+                    "date": 1725627526318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n       },\n     });\n     return users;\n   }\n-  \n+  // récupérer un user en particulier\n   async getUser({ userId }: { userId: number }) {\n     const user = await this.prisma.user.findUnique({\n       where: {\n         id: +userId,\n"
                 }
             ],
             "date": 1725549392145,

@@ -1,0 +1,90 @@
+{
+    "sourceFile": "src/main.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 18,
+            "patches": [
+                {
+                    "date": 1725630088638,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1725635799053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,7 +2,8 @@\n import { AppModule } from './app.module';\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n+  app.useGlobalPipes(new ValidationPipe());\n   await app.listen(8000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1725635837135,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import { NestFactory } from '@nestjs/core';\n import { AppModule } from './app.module';\n+imp\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n   app.useGlobalPipes(new ValidationPipe());\n"
+                },
+                {
+                    "date": 1725635842944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { NestFactory } from '@nestjs/core';\n import { AppModule } from './app.module';\n-imp\n+import {}\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n   app.useGlobalPipes(new ValidationPipe());\n"
+                },
+                {
+                    "date": 1725635856181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { NestFactory } from '@nestjs/core';\n import { AppModule } from './app.module';\n-import {}\n+import { Valida}\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n   app.useGlobalPipes(new ValidationPipe());\n"
+                },
+                {
+                    "date": 1725635861355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { NestFactory } from '@nestjs/core';\n import { AppModule } from './app.module';\n-import { Valida}\n+import { Validation}\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n   app.useGlobalPipes(new ValidationPipe());\n"
+                },
+                {
+                    "date": 1725635931506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,12 @@\n import { NestFactory } from '@nestjs/core';\n import { AppModule } from './app.module';\n-import { Validation}\n+import { ValidationPipe } from '@nestjs/common';\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n-  app.useGlobalPipes(new ValidationPipe());\n+  app.useGlobalPipes(new ValidationPipe(\n+    \n+  ));\n   await app.listen(8000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1725635939021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n   app.useGlobalPipes(new ValidationPipe(\n-    \n+    whit\n   ));\n   await app.listen(8000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1725635944532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n   app.useGlobalPipes(new ValidationPipe(\n-    whit\n+    whiteList\n   ));\n   await app.listen(8000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1725635952512,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n   app.useGlobalPipes(new ValidationPipe(\n-    whiteList\n+    whiteList: tur\n   ));\n   await app.listen(8000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1725635969371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,11 @@\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n   app.useGlobalPipes(new ValidationPipe(\n-    whiteList: tur\n+    \n+    whiteList: true,\n+\n   ));\n   await app.listen(8000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1725635977621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,11 @@\n import { ValidationPipe } from '@nestjs/common';\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n-  app.useGlobalPipes(new ValidationPipe(\n-    \n+  app.useGlobalPipes(\n+    new ValidationPipe(\n+\n     whiteList: true,\n \n   ));\n   await app.listen(8000);\n"
+                },
+                {
+                    "date": 1725635986306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,12 +4,14 @@\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n   app.useGlobalPipes(\n-    new ValidationPipe(\n+    new ValidationPipe({\n \n-    whiteList: true,\n+      whiteList: true,\n+    }\n \n+\n   ));\n   await app.listen(8000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1725635993680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n   app.useGlobalPipes(\n     new ValidationPipe({\n \n       whiteList: true,\n+      \n     }\n \n \n   ));\n"
+                },
+                {
+                    "date": 1725635999709,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   app.useGlobalPipes(\n     new ValidationPipe({\n \n       whiteList: true,\n-      \n+      transform\n     }\n \n \n   ));\n"
+                },
+                {
+                    "date": 1725636007344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,10 @@\n   app.useGlobalPipes(\n     new ValidationPipe({\n \n       whiteList: true,\n-      transform\n-    }\n+      transform: true\n+    },\n \n \n   ));\n   await app.listen(8000);\n"
+                },
+                {
+                    "date": 1725636038158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,14 +5,11 @@\n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n   app.useGlobalPipes(\n     new ValidationPipe({\n-\n-      whiteList: true,\n-      transform: true\n-    },\n-\n-\n-  ));\n+      hiteList: true,\n+      transform: true,\n+    }),\n+  );\n   await app.listen(8000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1725636044295,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n   app.useGlobalPipes(\n     new ValidationPipe({\n-      hiteList: true,\n+      WhiteList: true,\n       transform: true,\n     }),\n   );\n   await app.listen(8000);\n"
+                },
+                {
+                    "date": 1725636054204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n   app.useGlobalPipes(\n     new ValidationPipe({\n-      WhiteList: true,\n+      whitelist: true,\n       transform: true,\n     }),\n   );\n   await app.listen(8000);\n"
+                }
+            ],
+            "date": 1725630088638,
+            "name": "Commit-0",
+            "content": "import { NestFactory } from '@nestjs/core';\nimport { AppModule } from './app.module';\n\nasync function bootstrap() {\n  const app = await NestFactory.create(AppModule);\n  await app.listen(8000);\n}\nbootstrap();\n"
+        }
+    ]
+}
